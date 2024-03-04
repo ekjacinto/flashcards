@@ -2,9 +2,9 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1>Flashcards</h1>
-    </>
+    <div>
+      <h1 className="text-7xl">Flashcards</h1>
+    </div>
   );
 }
 
