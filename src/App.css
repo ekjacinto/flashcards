@@ -4,3 +4,21 @@
   padding: 2rem;
   text-align: center;
 }
+
+.flip-card {
+  transform-style: preserve-3d;
+  transition: 150ms;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+    translateY(var(--translate-y, 0));
+  border-radius: 0.375rem;
+}
+
+.flip-card.false {
+  --rotate-y: 180deg;
+  background-color: darkred;
+}
+
+.flip-card.true {
+  transform: rotateY(360deg);
+  background-color: darkblue;
+}

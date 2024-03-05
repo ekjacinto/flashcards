@@ -41,12 +41,16 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-7xl m-4">Flashcards</h1>
+      <h1 className="text-7xl font-bold m-4">Flashcards</h1>
       <p className="text-3xl">A good way to brush up your skills!</p>
       {flipCard === false ? (
-        <Flashcard text={currentProblem.question} event={handleFlipHandler} />
+        <div className="flip-card false">
+          <Flashcard text={currentProblem.question} event={handleFlipHandler} />
+        </div>
       ) : (
-        <Flashcard text={currentProblem.answer} event={handleFlipHandler} />
+        <div className="flip-card true">
+          <Flashcard text={currentProblem.answer} event={handleFlipHandler} />
+        </div>
       )}
       <NextButton event={nextClickHander} />
     </div>
