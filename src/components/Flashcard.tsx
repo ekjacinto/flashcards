@@ -6,7 +6,7 @@ type FlashcardProps = {
 const Flashcard = ({ text, event }: FlashcardProps) => {
   return (
     <div
-      className="mt-8 h-[280px] w-[560px] flex justify-center items-center cursor-pointer flip-card"
+      className="h-[280px] w-[560px] flex justify-center items-center cursor-pointer"
       onClick={event}
     >
       <h1 className="text-5xl font-bold">{text}</h1>
