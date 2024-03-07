@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Flashcard from "./components/Flashcard";
 import NextButton from "./components/NextButton";
+import PrevButton from "./components/PrevButton";
 
 const problems: { question: string; answer: string }[] = [
   {
@@ -26,7 +27,15 @@ function App() {
   const [currentProblem, setCurrentProblem] = useState(problems[0]);
   const [flipCard, setFlipCard] = useState(false);
 
-  const nextClickHander = () => {
+  const prevClickHandler = () => {
+    if (currentProblem === problems[0]) {
+      return;
+    }
+    setCurrentProblem(problems[problems.indexOf(currentProblem) - 1]);
+    setFlipCard(false);
+  };
+
+  const nextClickHandler = () => {
     if (currentProblem === problems[problems.length - 1]) {
       setCurrentProblem(problems[0]);
     } else {
@@ -52,7 +61,10 @@ function App() {
           <Flashcard text={currentProblem.answer} event={handleFlipHandler} />
         </div>
       )}
-      <NextButton event={nextClickHander} />
+      <div className="flex justify-center gap-4">
+        <PrevButton event={prevClickHandler} />
+        <NextButton event={nextClickHandler} />
+      </div>
     </div>
   );
 }
