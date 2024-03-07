@@ -1,15 +1,24 @@
 type FlashcardProps = {
+  prompt?: string;
   text: string;
   event: () => void;
 };
 
-const Flashcard = ({ text, event }: FlashcardProps) => {
+const Flashcard = ({ prompt, text, event }: FlashcardProps) => {
   return (
     <div
-      className="h-[280px] w-[560px] flex justify-center items-center cursor-pointer"
+      className="h-[280px] w-[510px] flex justify-center items-center cursor-pointer"
       onClick={event}
     >
-      <h1 className="text-5xl font-bold">{text}</h1>
+      {prompt !== undefined ? (
+        <h1 className="text-3xl text-left">
+          <b>{prompt}</b>
+          <br />
+          {text}
+        </h1>
+      ) : (
+        <h1 className="text-3xl text-left">{text}</h1>
+      )}
     </div>
   );
 };
