@@ -24,3 +24,31 @@
     transform: rotateY(180deg);
   }
 }
+
+.easy {
+  background-color: #02220e;
+
+  .easy-prompt {
+    background-color: #097131;
+  }
+}
+
+.medium {
+  background-color: #500801;
+
+  .medium-prompt {
+    background-color: #bd3c33;
+  }
+}
+
+.hard {
+  background-color: #050716;
+
+  .hard-prompt {
+    background-color: #3c4d82;
+  }
+}
+
+.flip-card.true div {
+  background-color: black;
+}
