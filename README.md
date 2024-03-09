@@ -31,6 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
+![solar-system-trivia](https://github.com/ekjacinto/flashcards/assets/109046831/d503c913-26dd-4c7a-a331-0c95be2824fd)
 <!-- Replace this with whatever GIF tool you used! -->
 
 GIF created with [Veed](https://www.veed.io/convert/mp4-to-gif)
