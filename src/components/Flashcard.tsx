@@ -11,13 +11,17 @@ const Flashcard = ({ prompt, text, event }: FlashcardProps) => {
       onClick={event}
     >
       {prompt !== undefined ? (
-        <h1 className="text-3xl text-left">
-          <b>{prompt}</b>
+        <div className="text-left">
+          <h1 className="text-3xl">
+            <b>
+              <u>{prompt}</u>
+            </b>
+          </h1>
           <br />
-          {text}
-        </h1>
+          <h1 className="text-2xl">{text}</h1>
+        </div>
       ) : (
-        <h1 className="text-3xl text-left">{text}</h1>
+        <h1 className="text-3xl">{text}</h1>
       )}
     </div>
   );

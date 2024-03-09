@@ -5,8 +5,8 @@ type NextButtonProps = {
 const NextButton = ({ event }: NextButtonProps) => {
   return (
     <div className="flex justify-center h-8">
-      <div className="bg-white w-[48px] flex justify-center items-center rounded-[4px]">
-        <button className="text-black font-bold w-full" onClick={event}>
+      <div className="bg-white w-[64px] h-8 flex justify-center items-center rounded-full">
+        <button className="text-black text-lg font-bold w-full" onClick={event}>
           {">"}
         </button>
       </div>

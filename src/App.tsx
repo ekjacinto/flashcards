@@ -25,8 +25,30 @@ const problems: { prompt?: string; question: string; answer: string }[] = [
   {
     prompt: "What is the output of this code?",
     question:
-      "let nums = [2, 4, 6, 8];\nlet newNums = nums.map(\n\t(num) => (num * 2 + 1)\n); \nconsole.log(newNums);",
+      "let nums = [2, 4, 6, 8]; \nlet newNums = nums.map(\n\t(num) => (num * 2 + 1)\n); \nconsole.log(newNums);",
     answer: "Answer: [5, 9, 13, 17]",
+  },
+  {
+    prompt: "What is the output of this code?",
+    question:
+      "const obj = { a: 1, b: 2, c: 3 }; \nconsole.log(Object.keys(obj));",
+    answer: "Answer: ['a', 'b', 'c']",
+  },
+  {
+    prompt: "What is the output of this code?",
+    question:
+      "let nums = [4, 9, 16, 25]; \nlet sum = nums.reduce(\n\t(acc, num) => acc + num\n); \nconsole.log(sum);",
+    answer: "Answer: 54",
+  },
+  {
+    prompt: "What is the output of this code?",
+    question:
+      "let nums = [4, 2, 9, 1, 10]; \nlet filteredNums = nums.filter(\n\t(num) => num > 5\n); \nconsole.log(filteredNums);",
+    answer: "Answer: [9, 10]",
+  },
+  {
+    question: "Is JavaScript statically-typed or dynamically-typed?",
+    answer: "Answer: Dynamically-typed",
   },
 ];
 
@@ -63,15 +85,25 @@ function App() {
           Fundamentals
         </span>
       </h1>
-      <p className="text-3xl">A good way to brush up JavaScript skills!</p>
-      <div className="flex max-w-xl">
+      <div className="text-3xl">
+        <p>A good way to brush up JavaScript skills!</p>
+        <p>Total number of cards: {problems.length}</p>
+      </div>
+      <div className="flex">
         {flipCard === false ? (
           <div className="flip-card false">
-            <Flashcard
-              prompt={currentProblem.prompt}
-              text={currentProblem.question}
-              event={handleFlipHandler}
-            />
+            {currentProblem.prompt !== undefined ? (
+              <Flashcard
+                prompt={currentProblem.prompt}
+                text={currentProblem.question}
+                event={handleFlipHandler}
+              />
+            ) : (
+              <Flashcard
+                text={currentProblem.question}
+                event={handleFlipHandler}
+              />
+            )}
           </div>
         ) : (
           <div className="flip-card true font-bold">
